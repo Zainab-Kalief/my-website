@@ -1,0 +1,104 @@
+@media (min-width: 901px)  {
+
+header {  background-color: #429CDF;}
+.skills { margin: 60px;}
+.skills h1 {  margin-bottom: 30px; }
+#skill-left h3, #skill-right h3 { font-weight: 100; letter-spacing: .06em; font-size: 1.5rem;  margin-bottom: 20px; }
+.skill-bottom {  margin-top: 50px; }
+.tag {
+  border-radius: 50px;
+      color: white;
+      font-size: .8em;
+      padding: 20px 35px;
+      letter-spacing: .05em;
+      font-weight: 100;
+      display: inline-block;
+      background-color: #eccece;
+      margin: .4em;
+}
+.experience {
+  float: left;
+  background-image: url('../img/exp.jpg');
+  background-size: cover;
+  padding: 40px;
+  position: relative;
+  margin-bottom: 60px;
+}
+.experience h1 {  margin-bottom: 30px; color: white; }
+#tracker {
+  background: #429CDF;
+  bottom: 0px;
+  left: 49.9%;
+  position: absolute;
+  top: 120px;
+  width: 3px;
+  padding: 0;
+}
+.circle-wrapper {
+  float: left;
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+.circle {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: #429CDF;
+  display: inline-block;
+}
+.work-wrapper {
+  float: left;
+  width: 100%;
+}
+.work-container {
+  margin: 0 auto;
+  width: 740px;
+}
+.left, .right {  padding-bottom: 80px; width: 350px; }
+.left {  text-align: right;   float: left;   }
+.right {  float: right;  }
+#last-work { padding-bottom: 0}
+.work h4, .work h5, .work h6 { font-weight: 100;  letter-spacing: .05em;     }
+.work p {  color: #CCCCCC; font-weight: 200; }
+.work h5 { color: #429CDF; font-weight: 100; }
+.work h4 { color: white;  font-weight: 100; font-size: 1.4em;}
+.work h6 {  color: white; margin-top: 30px;  margin-bottom: 30px; font-weight: 400; }
+.recomm {  padding: 60px; }
+.recomm-container { margin-bottom: 50px; }
+.recomm h1 { margin-bottom: 20px; }
+.recomm p { font-style: italic; font-weight: 300; }
+.recommender img { width: 70px; vertical-align: bottom; }
+.recommender-text {  display: inline-block; margin-left: 20px; }
+.recommender-text h5 { line-height: 30px;  font-size: 1.3em;  font-weight: 400; }
+.recommender-text h5 a { text-decoration: none;  }
+.recommender-text h5 a:hover { color: #000c93; }
+.recommender-text h4 {  font-size: 1.3em;  color: #999999; font-weight: 400; }
+.recomm span {  font-style: italic; font-weight: 100; color: #5a5a5a; }
+.edu {
+  background-image: url('../img/edu.jpg');
+  background-size: cover;
+  padding: 60px;
+  color: white;
+}
+.edu-container {  margin-top: 40px; }
+.edu-container h4 {  font-weight: 100; }
+.edu-container h3 {  font-weight: 400; }
+#resume {
+  margin: 100px auto;
+  text-align: center;
+  border: 2px solid #429CDF;
+border-radius: 50px;
+padding: 15px;
+width: 13%;
+}
+#resume a {
+  text-decoration: none;
+  color: #429CDF;
+  letter-spacing: .1em;
+    font-weight: 100;
+}
+#resume a:hover { color: #000c93;}
+#resume:hover { border: 2px solid #000c93; }
+
+}

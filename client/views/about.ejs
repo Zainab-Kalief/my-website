@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/master.css">
+    <link rel="stylesheet" href="./css/mobile-master.css">
+    <link rel="stylesheet" href="./css/mobile-about.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,400,500,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Wura</title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+        const selectNames = ['select-home', 'select-about', 'select-portfolio', 'select-experience', 'select-game']
+        for (id of selectNames) {
+          if (id != 'select-about') {
+            $('#' + id).hide()
+          }
+        }
+
+        $("#select-home-li").click(function () {
+          for (id of selectNames) {
+            if (id != 'select-home') {  $('#' + id).hide()  } else {  $("#select-home").toggle("fast")  }
+          }
+        })
+        $("#select-about-li").click(function () {
+          for (id of selectNames) {
+            if (id != 'select-about') {  $('#' + id).hide()  } else {  $("#select-about").toggle("fast")  }
+          }
+        })
+        $("#select-portfolio-li").click(function () {
+          for (id of selectNames) {
+              if (id != 'select-portfolio') { $('#' + id).hide()  } else {  $("#select-portfolio").toggle("fast")  }
+          }
+        })
+        $("#select-experience-li").click(function () {
+          for (id of selectNames) {
+            if (id != 'select-experience') {  $('#' + id).hide()  } else {  $("#select-experience").toggle("fast")
+            }
+          }
+        })
+        $("#select-game-li").click(function () {
+          for (id of selectNames) {
+            if (id != 'select-game') {  $('#' + id).hide()  } else {  $("#select-game").toggle("fast")  }
+          }
+          })
+
+          $('.nav-menu').click(function () {
+            $('.main').css('display', 'none')
+            $('#nav-extended').css('display', 'block')
+          })
+
+          $('.cancel').click(function () {
+            $('#nav-extended').css('display', 'none')
+            $('.main').css('display', 'block')
+          })
+
+          $('form').submit(function (element) {
+            var myForm = $('form')
+            var data = {}
+            element.preventDefault();
+            for (let value of $(this).serializeArray()) {
+              data[value.name] = value.value
+            }
+            $.post('http://localhost:8000/email', data,
+               (response, status) => {
+                var content;
+                if (response.status) {
+                  $('.error').text(response.message)
+                  $('.error').css('color', 'white')
+                } else {
+                  $('.error').text(response.message)
+                  $('.error').css('color', '#a52929')
+                }
+                $('form').append(content)
+                $('form').trigger('reset')
+              })
+          })
+
+        })
+    </script>
+  </head>
+  <body>
+      <div class="main">
+        <header>
+          <img src="./img/logo.png" alt="logo" class="logo desktop" >
+          <img src="./img/mobile/logo.png" alt="logo" class="logo mobile" >
+          <img src="./img/mobile/nav.png" alt="logo" class="nav-menu mobile" >
+          <ul class="nav justify-content-center desktop">
+            <li class="nav-item" id="select-home-li">  <a class="nav-link " href="/">HOME</a> <div class="select" id="select-home"></div> </li>
+            <li class="nav-item" id="select-about-li">  <a class="nav-link " href="/about">ABOUT</a> <div class="select" id="select-about"></div>  </li>
+            <li class="nav-item" id="select-portfolio-li">  <a class="nav-link" href="/portfolio">PORTFOLIO</a> <div class="select" id="select-portfolio"></div> </li>
+            <li class="nav-item" id="select-experience-li">  <a class="nav-link" href="/experience">EXPERIENCE</a> <div class="select" id="select-experience"></div></li>
+            <li class="nav-item" id="select-game-li">  <a class="nav-link" href="/game">GAME</a> <div class="select" id="select-game"></div> </li>
+          </ul>
+          <div class="header-content" id="about-intro-text">
+            <p>Get to know my</p>
+            <h1 > passion <span>&amp;</span> personality</h1>
+          </div>
+        </header>
+
+        <section class=" about">
+          <h1>My Story</h1>
+          <div class="mobile container" id="about-pic">
+              <img src="./img/mobile/wura.png" alt="wura" class="container">
+          </div>
+          <div class="row">
+            <div class="col" id="about-text">
+                <p>My name is Wura Alese and I’m an economics graduate from Nigeria who previously worked in marketing but has always secretly admired
+                  the amazing industry called tech. For the past 7 years, I have always obsessed over software and its incredible impact on transforming
+                  almost every hardware into a smarter version. Last year, I trained myself in learning how to design apps and immediately got a job to
+                  design mock-ups for client apps in a tech startup. This year, I wanted much more and finally to a leap of faith to fulfil my dreams by
+                  signing up for an intensive coding boot camp in Seattle. Right now, I’m a full stack developer with previous work experience in UI/UX design
+                  and marketing.
+                 </p>
+                 <p>I’m currently seeking for opportunities in search of someone who isn’t just most passionate about building cool things with software
+                   but also someone who can pick up new languages and learn them at a very fast pace. In my spare time, I learn new frameworks and build
+                   ideas I had previously only dreamt of.
+                  </p>
+            </div>
+            <div class="col desktop" id="about-pic">
+                <img src="./img/wura.png" alt="wura" class="">
+            </div>
+          </div>
+        </section>
+
+        <section class="row desktop" id="fun-fact">
+          <div class="row" id="fun-fact-top">
+            <div class="col">
+               <div class="fun-fact-icon">
+                 <div class="fun-fact-icon-line"> </div>
+                 <div class="fun-fact-icon-container"> <img src="./img/code.png" alt=""> </div>
+               </div>
+                <p class="fun-fact-text">My lifelong dream for the past 7 years has been to become a Software Engineer. God made it my reality in 2017.</p>
+            </div>
+            <div class="col">
+               <div class="fun-fact-icon">
+                 <div class="fun-fact-icon-line"> </div>
+                 <div class="fun-fact-icon-container"> <img src="./img/bNw.png" alt=""> </div>
+               </div>
+                <p class="fun-fact-text">I love anything in Black &amp; White stripes. This is a hint for those who don’t know what I like.</p>
+            </div>
+            <div class="col">
+               <div class="fun-fact-icon">
+                 <div class="fun-fact-icon-line"> </div>
+                 <div class="fun-fact-icon-container"> <img src="./img/tv.png" alt=""> </div>
+               </div>
+                <p class="fun-fact-text">Downton Abbey is my favourite show of all time. I love it so much I made over 25 people I know to watch it.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <p class="ff-text-two">My favourite person in the world is Barak Obama. My life goal is for us to become friends someday.  </p>
+              <div class="fun-fact-icon">
+                <div class="fun-fact-icon-container-2"> <img src="./img/obama.png" alt=""> </div>
+                <div class="fun-fact-icon-line-2"> </div>
+              </div>
+            </div>
+            <div class="col">
+              <p class="ff-text-two">I got my first bike in 2015 as a Christmas gift. This would be my first time riding one. Thanks Dad.</p>
+              <div class="fun-fact-icon">
+                <div class="fun-fact-icon-container-2"> <img src="./img/bicycle.png" alt=""> </div>
+                <div class="fun-fact-icon-line-2"> </div>
+              </div>
+            </div>
+            <div class="col">
+              <p class="ff-text-two">My favourite place to hang out is at a roller coaster park. There is nothing more thrilling than the rush from a ride.</p>
+              <div class="fun-fact-icon">
+                <div class="fun-fact-icon-container-2"> <img src="./img/ride.png" alt=""> </div>
+                <div class="fun-fact-icon-line-2"> </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mobile fun-facts">
+          <div class="fun-fact-left">
+            <p class="">My lifelong dream for the past 7 years has been to become a Software Engineer. God made it my reality in 2017.</p>
+               <div class="fun-fact-icon">
+                 <div class="fun-fact-line"> </div>
+                 <div class="fun-fact-circle"> <img src="./img/mobile/code.png" alt=""></div>
+               </div>
+          </div>
+          <div class="fun-fact-right">
+            <p class="">My favourite person in the world is Barak Obama. My life goal is for us to become friends someday.</p>
+               <div class="fun-fact-icon">
+                 <div class="fun-fact-circle"> <img src="./img/mobile/obama.png" alt="" > </div>
+                 <div class="fun-fact-line">  </div>
+               </div>
+          </div>
+          <div class="fun-fact-left">
+            <p class="">I love anything in Black &amp; White stripes. This is a hint for those who don’t know what I like.</p>
+               <div class="fun-fact-icon">
+                 <div class="fun-fact-line"> </div>
+                 <div class="fun-fact-circle"><img src="./img/mobile/BnW.png" alt=""></div>
+               </div>
+          </div>
+          <div class="fun-fact-right">
+            <p class="">I got my first bike in 2015 as a Christmas gift. This would be my first time riding one. Thanks Dad</p>
+               <div class="fun-fact-icon">
+                 <div class="fun-fact-circle"> <img src="./img/mobile/bicycle.png" alt="" > </div>
+                 <div class="fun-fact-line"> </div>
+               </div>
+          </div>
+          <div class="fun-fact-left">
+            <p class="">My favourite place to hang out is at a roller coaster park. There is nothing more thrilling than the rush from a ride.</p>
+               <div class="fun-fact-icon">
+                 <div class="fun-fact-line"> </div>
+                 <div class="fun-fact-circle"> <img src="./img/mobile/ride.png" alt=""> </div>
+               </div>
+          </div>
+          <div class="fun-fact-right">
+            <p class="">Downton Abbey is my favourite show of all time. I love it so much I made over 25 people I know to watch it.</p>
+               <div class="fun-fact-icon">
+                 <div class="fun-fact-circle"> <img src="./img/mobile/tv.png" alt="" > </div>
+                 <div class="fun-fact-line"> </div>
+               </div>
+          </div>
+        </section>
+
+        <section class="view">
+         <h1>My Views</h1>
+         <div class="desktop">
+           <div class="row quote-top">
+             <div class="col quote-container">
+               <h4 class="quote">“When life gets you down, you know what you gotta do? Just keep swimming!”</h4> <h4>- Finding Dory</h4>
+             </div>
+             <div class="col quote-container">
+               <h4 class="quote">“Self-sacrifice is the way to finding your true self. Live for others first before self.”</h4> <h4>- W</h4>
+             </div>
+           </div>
+           <div class="quote-container">
+             <h4 class="quote-bottom">“Let us not love in words and speech but in action and in truth.”</h4> <h4>- Ap. John</h4>
+           </div>
+         </div>
+
+         <div class="mobile">
+             <div class="row">
+               <div class="quote-container col-7">
+                 <p>“When life gets you down, you know what you gotta do? Just keep swimming!”</p><p>- Finding Dory</p>
+                 <div class="col-5">  </div>
+               </div>
+             </div>
+             <div class="row">
+               <div class="col-5">  </div>
+               <div class="quote-container col-7">
+                 <p>“Let us not love in words and speech but in action and in truth.”</p><p>- Ap. John</p>
+               </div>
+             </div>
+             <div class="row">
+               <div class="quote-container col-7">
+                 <p>“Self-sacrifice is the way to finding your true self. Live for others first before self.”</p><p>- W</p>
+               </div>
+               <div class="col-5">  </div>
+             </div>
+         </div>
+       </section>
+
+       <footer>
+         <div class="social">
+           <a  class="col" href="https://www.linkedin.com/in/wura-alese-22650a83/" target="_blank">
+             <img src="./img/linkedin.png" alt="" class="desktop">
+             <img src="./img/mobile/linkedin.png" alt="" class="mobile">
+           </a>
+           <a  class="col" href="https://twitter.com/wuraalese" target="_blank">
+             <img src="./img/twitter.png" alt="" class="desktop">
+             <img src="./img/mobile/twitter.png" alt="" class="mobile">
+           </a>
+           <a  class="col" href="https://www.instagram.com/wuraalese/" target="_blank">
+             <img src="./img/instagram.png" alt="" class="desktop">
+             <img src="./img/instagram.png" alt="" class="mobile">
+           </a>
+           <a  class="col" href="https://github.com/Zainab-Kalief" target="_blank">
+             <img src="./img/github.png" alt="" class="desktop">
+             <img src="./img/github.png" alt="" class="mobile">
+           </a>
+         </div>
+         <form class="note desktop" action="/email" method="post">
+           <div class="row " id="note-input">
+             <input type="text" name="name" value="" class="col-5" placeholder="F U L L &nbsp;  N A M E">
+             <div class="col-2"></div>
+             <input type="email" name="email" value="" class="col-5" placeholder="E M A I L">
+           </div>
+           <textarea type="text" name="message" id="message" placeholder="M E S S A G E"></textarea>
+
+           <input type="hidden" name="page" value="about">
+           <h4 class="error"></h4>
+           <input type="submit" value="send" class="send-button">
+         </form>
+         <form class="note mobile" action="/email" method="post">
+           <input type="text" name="name" value="" class="mobile-form-field" placeholder="F U L L &nbsp;  N A M E">
+           <input type="email" name="email" value="" class="mobile-form-field" placeholder="E M A I L">
+           <textarea type="text" name="message" id="message"  class="mobile-form-field" placeholder="M E S S A G E"></textarea>
+           <input type="hidden" name="page" value="about">
+           <h4 class="error"></h4>
+           <input type="submit" value="send" class="send-button">
+         </form>
+       </footer>
+      </div>
+
+
+      <!-- nav menu extended -->
+      <nav id="nav-extended" class="mobile">
+        <img src="./img/mobile/logo.png" alt="logo" class="logo mobile" >
+        <img src="./img/mobile/cancel.png" alt="logo" class="mobile cancel" >
+        <div class="nav-wrapper">
+          <div class="nav-container">
+            <h3><a class="nav-link " href="/">HOME</a></h3>
+            <h3><a class="nav-link " href="/about">ABOUT</a></h3>
+            <h3><a class="nav-link" href="/portfolio">PORTFOLIO</a></h3>
+            <h3><a class="nav-link" href="/experience">EXPERIENCE</a></h3>
+            <h3><a class="nav-link" href="/game">GAME</a></h3>
+            <div class="contact-button"> <a href="#">contact</a> </div>
+          </div>
+        </div>
+      </nav>
+
+  </body>
+</html>

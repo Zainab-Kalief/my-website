@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/index.css" >
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/mobile-index.css">
+    <link rel="stylesheet" href="css/mobile-master.css">
+    <link rel="stylesheet" href="./css/about.css">
+    <link rel="stylesheet" href="./css/mobile-about.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,400,500,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Wura</title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+        const selectNames = ['select-home', 'select-about', 'select-portfolio', 'select-experience', 'select-game']
+        for (id of selectNames) {
+          if (id != 'select-home') {
+            $('#' + id).hide()
+          }
+        }
+
+        $("#select-home-li").click(function () {
+          for (id of selectNames) {
+            if (id != 'select-home') {  $('#' + id).hide()  } else {  $("#select-home").toggle("fast")  }
+          }
+        })
+        $("#select-about-li").click(function () {
+          for (id of selectNames) {
+            if (id != 'select-about') {  $('#' + id).hide()  } else {  $("#select-about").toggle("fast")  }
+          }
+        })
+        $("#select-portfolio-li").click(function () {
+          for (id of selectNames) {
+              if (id != 'select-portfolio') { $('#' + id).hide()  } else {  $("#select-portfolio").toggle("fast")  }
+          }
+        })
+        $("#select-experience-li").click(function () {
+          for (id of selectNames) {
+            if (id != 'select-experience') {  $('#' + id).hide()  } else {  $("#select-experience").toggle("fast")
+            }
+          }
+        })
+        $("#select-game-li").click(function () {
+          for (id of selectNames) {
+            if (id != 'select-game') {  $('#' + id).hide()  } else {  $("#select-game").toggle("fast")  }
+          }
+          })
+
+        $('.nav-menu').click(function () {
+          $('.main').css('display', 'none')
+          $('#nav-extended').css('display', 'block')
+        })
+
+        $('.cancel').click(function () {
+          $('#nav-extended').css('display', 'none')
+          $('.main').css('display', 'block')
+        })
+
+        $('form').submit(function (element) {
+          var myForm = $('form')
+          var data = {}
+          element.preventDefault();
+          for (let value of $(this).serializeArray()) {
+            data[value.name] = value.value
+          }
+          $.post('http://localhost:8000/email', data,
+             (response, status) => {
+              var content;
+              if (response.status) {
+                $('.error').text(response.message)
+                $('.error').css('color', 'white')
+              } else {
+                $('.error').text(response.message)
+                $('.error').css('color', '#a52929')
+              }
+              $('form').append(content)
+              $('form').trigger('reset')
+            })
+        })
+
+
+
+        $(".contact-button").click(function() {
+            $('html, body').animate({
+                scrollTop: $("footer").offset().top
+            }, 1000);
+        });
+
+
+        })
+    </script>
+  </head>
+  <body id="body">
+    <div class="main">
+      <main>
+        <div class="overlay">
+          <img src="./img/logo.png" alt="logo" class="logo desktop" >
+          <img src="./img/mobile/logo.png" alt="logo" class="logo mobile" >
+          <img src="./img/mobile/nav.png" alt="logo" class="nav-menu mobile" >
+          <ul class="nav justify-content-center desktop">
+            <li class="nav-item" id="select-home-li">  <a class="nav-link " href="/">HOME</a> <div class="select" id="select-home"></div> </li>
+            <li class="nav-item" id="select-about-li">  <a class="nav-link " href="/about">ABOUT</a> <div class="select" id="select-about"></div>  </li>
+            <li class="nav-item" id="select-portfolio-li">  <a class="nav-link" href="/portfolio">PORTFOLIO</a> <div class="select" id="select-portfolio"></div> </li>
+            <li class="nav-item" id="select-experience-li">  <a class="nav-link" href="/experience">EXPERIENCE</a> <div class="select" id="select-experience"></div></li>
+            <li class="nav-item" id="select-game-li">  <a class="nav-link" href="/game">GAME</a> <div class="select" id="select-game"></div> </li>
+          </ul>
+          <section class="main-content">
+            <h1 class=""> DESIGN <span>&amp;</span> </h1>
+            <div class="main-content-divider"></div>
+            <h2 class="">CODE.</h2>
+          </section>
+          <div class="contact-button"> <a href="#">contact</a> </div>
+          <!-- <img src="./img/back.png" alt="go-down" class="scroll-down desktop">  -->
+        </div>
+      </main>
+    </div>
+
+<section class="intro">
+  <h1>Hi, I'm Wura</h1>
+  <p>I’m a full stack developer with a wide range of skills. I have experience with both client-side and server-side development.
+    I also have experience with UI/UX design. I’m programmer first with a passion for design and I’m currently seeking opportunities in
+    software development.</p>
+</section>
+
+    <footer>
+      <div class="social">
+        <a  class="col" href="https://www.linkedin.com/in/wura-alese-22650a83/" target="_blank">
+          <img src="./img/linkedin.png" alt="" class="desktop">
+          <img src="./img/mobile/linkedin.png" alt="" class="mobile">
+        </a>
+        <a  class="col" href="https://twitter.com/wuraalese" target="_blank">
+          <img src="./img/twitter.png" alt="" class="desktop">
+          <img src="./img/mobile/twitter.png" alt="" class="mobile">
+        </a>
+        <a  class="col" href="https://www.instagram.com/wuraalese/" target="_blank">
+          <img src="./img/instagram.png" alt="" class="desktop">
+          <img src="./img/instagram.png" alt="" class="mobile">
+        </a>
+        <a  class="col" href="https://github.com/Zainab-Kalief" target="_blank">
+          <img src="./img/github.png" alt="" class="desktop">
+          <img src="./img/github.png" alt="" class="mobile">
+        </a>
+      </div>
+      <form class="note desktop" action="/email" method="post">
+        <div class="row " id="note-input">
+          <input type="text" name="name" value="" class="col-5" placeholder="F U L L &nbsp;  N A M E">
+          <div class="col-2"></div>
+          <input type="email" name="email" value="" class="col-5" placeholder="E M A I L">
+        </div>
+        <textarea type="text" name="message" id="message" placeholder="M E S S A G E"></textarea>
+
+        <input type="hidden" name="page" value="about">
+        <h4 class="error"></h4>
+        <input type="submit" value="send" class="send-button">
+      </form>
+      <form class="note mobile" action="/email" method="post">
+        <input type="text" name="name" value="" class="mobile-form-field" placeholder="F U L L &nbsp;  N A M E">
+        <input type="email" name="email" value="" class="mobile-form-field" placeholder="E M A I L">
+        <textarea type="text" name="message" id="message"  class="mobile-form-field" placeholder="M E S S A G E"></textarea>
+        <input type="hidden" name="page" value="about">
+        <h4 class="error"></h4>
+        <input type="submit" value="send" class="send-button">
+      </form>
+    </footer>
+    <!-- nav menu extended -->
+    <nav id="nav-extended" class="mobile">
+      <img src="./img/mobile/logo.png" alt="logo" class="logo mobile" >
+      <img src="./img/mobile/cancel.png" alt="logo" class="mobile cancel" >
+      <div class="nav-wrapper">
+        <div class="nav-container">
+          <h3><a class="nav-link " href="/">HOME</a></h3>
+          <h3><a class="nav-link " href="/about">ABOUT</a></h3>
+          <h3><a class="nav-link" href="/portfolio">PORTFOLIO</a></h3>
+          <h3><a class="nav-link" href="/experience">EXPERIENCE</a></h3>
+          <h3><a class="nav-link" href="/game">GAME</a></h3>
+          <div class="contact-button"> <a href="#">contact</a> </div>
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>

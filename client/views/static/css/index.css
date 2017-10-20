@@ -1,0 +1,59 @@
+@media (min-width: 901px)  {
+  main {
+    margin: 0px;
+    background-image: url('../img/home.jpeg');
+    width: 100%;
+    background-size: cover;
+  }
+  .overlay { background-size: cover; width: inherit; height: inherit; background-color: rgba(0,0,0,.2); text-align: center;     padding-bottom: 1%;}
+   .main-content {
+    text-align: center;
+    color: white;
+        margin-top: 5em;
+   }
+  .main-content h1 {
+    font-family: 'Montserrat', sans-serif;
+        font-weight: 100;
+        font-size: 5rem;
+  }
+  .main-content span {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 2rem;
+  }
+  .main-content h2 {
+    font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+        font-size: 5rem;
+  }
+  .main-content-divider {
+    height: 3px;
+  background-color: white;
+  width: 15%;
+  margin: 20px auto;
+  }
+  .contact-button {
+    margin: 90px auto 55px auto;
+    text-align: center;
+    border: 2px solid white;
+  border-radius: 50px;
+  padding: 15px;
+  width: 13%;
+
+  }
+  .contact-button a {
+    text-decoration: none;
+    color: white;
+    letter-spacing: .1em;
+      font-weight: 100;
+  }
+  .scroll-down {
+    width: 3em;
+        margin-bottom: 60px;
+  }
+.contact-button:hover {
+  background: white;
+}
+.contact-button:hover a { color: black; }
+
+}

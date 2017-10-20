@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/experience.css">
+    <link rel="stylesheet" href="./css/master.css">
+    <link rel="stylesheet" href="./css/mobile-master.css">
+    <link rel="stylesheet" href="./css/mobile-experience.css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,400,500,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <title>Wura</title>
+    <script type="text/javascript">
+        $(document).ready(function () {
+        const selectNames = ['select-home', 'select-about', 'select-portfolio', 'select-experience', 'select-game']
+        for (id of selectNames) {
+          if (id != 'select-experience') {
+            $('#' + id).hide()
+          }
+        }
+
+        $("#select-home-li").click(function () {
+          for (id of selectNames) {
+            if (id != 'select-home') {  $('#' + id).hide()  } else {  $("#select-home").toggle("fast")  }
+          }
+        })
+        $("#select-about-li").click(function () {
+          for (id of selectNames) {
+            if (id != 'select-about') {  $('#' + id).hide()  } else {  $("#select-about").toggle("fast")  }
+          }
+        })
+        $("#select-portfolio-li").click(function () {
+          for (id of selectNames) {
+              if (id != 'select-portfolio') { $('#' + id).hide()  } else {  $("#select-portfolio").toggle("fast")  }
+          }
+        })
+        $("#select-experience-li").click(function () {
+          for (id of selectNames) {
+            if (id != 'select-experience') {  $('#' + id).hide()  } else {  $("#select-experience").toggle("fast")
+            }
+          }
+        })
+        $("#select-game-li").click(function () {
+          for (id of selectNames) {
+            if (id != 'select-game') {  $('#' + id).hide()  } else {  $("#select-game").toggle("fast")  }
+          }
+          })
+
+          $('.nav-menu').click(function () {
+            $('.main').css('display', 'none')
+            $('#nav-extended').css('display', 'block')
+          })
+
+          $('.cancel').click(function () {
+            $('#nav-extended').css('display', 'none')
+            $('.main').css('display', 'block')
+          })
+
+          $('form').submit(function (element) {
+            var myForm = $('form')
+            var data = {}
+            element.preventDefault();
+            for (let value of $(this).serializeArray()) {
+              data[value.name] = value.value
+            }
+            $.post('http://localhost:8000/email', data,
+               (response, status) => {
+                var content;
+                if (response.status) {
+                  $('.error').text(response.message)
+                  $('.error').css('color', 'white')
+                } else {
+                  $('.error').text(response.message)
+                  $('.error').css('color', '#a52929')
+                }
+                $('form').append(content)
+                $('form').trigger('reset')
+              })
+          })
+
+        })
+    </script>
+  </head>
+  <body>
+      <div class="main">
+        <header>
+          <img src="./img/logo.png" alt="logo" class="logo desktop" >
+          <img src="./img/mobile/logo.png" alt="logo" class="logo mobile" >
+          <img src="./img/mobile/nav.png" alt="logo" class="nav-menu mobile" >
+          <ul class="nav justify-content-center desktop">
+            <li class="nav-item" id="select-home-li">  <a class="nav-link " href="/">HOME</a> <div class="select" id="select-home"></div> </li>
+            <li class="nav-item" id="select-about-li">  <a class="nav-link " href="/about">ABOUT</a> <div class="select" id="select-about"></div>  </li>
+            <li class="nav-item" id="select-portfolio-li">  <a class="nav-link" href="/portfolio">PORTFOLIO</a> <div class="select" id="select-portfolio"></div> </li>
+            <li class="nav-item" id="select-experience-li">  <a class="nav-link" href="/experience">EXPERIENCE</a> <div class="select" id="select-experience"></div></li>
+            <li class="nav-item" id="select-game-li">  <a class="nav-link" href="/game">GAME</a> <div class="select" id="select-game"></div> </li>
+          </ul>
+          <div class="header-content">
+            <p>My professional journey from start</p>
+            <h1> start <span id="header-span-text">to</span> finish</h1>
+          </div>
+        </header>
+
+        <section class="skills" >
+          <h1>Skills</h1>
+          <div class="row">
+            <div class="col skill" id="skill-left">
+              <h3>LANGUAGES</h3>
+              <div class="">
+                <div class="tag">Java</div>
+                <div class="tag">Python</div>
+                <div class="tag">Javascript</div>
+                <div class="tag">Swift</div>
+                <div class="tag">Typescript</div>
+              </div>
+
+            </div>
+            <div class="col skill" id="skill-right">
+              <h3>FRAMEWORKS</h3>
+              <div class="">
+                <div class="tag">Angular 4</div>
+                <div class="tag">Spring</div>
+                <div class="tag">Socket.io</div>
+                <div class="tag">Express</div>
+                <div class="tag">Flask</div>
+                <div class="tag">Django</div>
+              </div>
+            </div>
+          </div>
+          <div class="row skill-bottom">
+            <div class="col skill" id="skill-left">
+              <h3>DB MAANGEMENT</h3>
+              <div class="">
+                <div class="tag">MySQL</div>
+                <div class="tag">MongoDB</div>
+              </div>
+            </div>
+            <div class="col skill" id="skill-right">
+              <h3>DESIGN</h3>
+              <div class="">
+                <div class="tag">Sketch</div>
+                <div class="tag">Photoshop</div>
+                <div class="tag">Illustrator</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="experience desktop">
+          <h1>Experience</h1>
+          <div id="tracker"></div>
+          <div class="circle-wrapper" id="dot-one"> <div class="circle"></div> </div>
+          <div class="work-wrapper">
+            <div class="work-container">
+              <div class="work right">
+                <h5>2017</h5>
+                <h4>CODING DOJO</h4>
+                <h6>Software Development Trainee</h6>
+                <p >Coded 1000+ hours in an immersive full-stack development program in Seattle.
+                     Through the program, I gained proficiency in Java, MEAN and Python.</p>
+            </div>
+          </div>
+        </div>
+          <div class="circle-wrapper" id="dot-two"> <div class="circle"></div> </div>
+          <div class="work-wrapper">
+            <div class="work-container">
+              <div class="work left">
+                <h5>2015-2016</h5>
+                <h4>REFTEK TECHNOLOGIES</h4>
+                <h6>UI/UX Designer</h6>
+                <p >Oversaw and implemented the mobile app mock-up designs of 2 core projects as well as
+                    structuring the information architecture.</p>
+              </div>
+            </div>
+          </div>
+          <div class="circle-wrapper" id="dot-three"> <div class="circle"></div> </div>
+          <div class="work-wrapper">
+            <div class="work-container">
+              <div class="work right" id="last-work">
+                <h5>2014-2015</h5>
+                <h4>LEKKI BRITISH SCHOOL</h4>
+                <h6>Marketing &amp; Admissions Officer</h6>
+                <p >Headed the admissions &amp; marketing team which resulted in a 60% partnership
+                   increase &amp; over 40% increase in the number of student applications in one year.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="experience mobile">
+          <h1>Experience</h1>
+          <div id="tracker"></div>
+          <div class="circle-wrapper" id="dot-one"> <div class="circle"></div> </div>
+          <div class="work-wrapper">
+            <div class="work-container">
+              <div class="work right">
+                <h5>2017</h5>
+                <h4>CODING DOJO</h4>
+                <h6>Software Development Trainee</h6>
+                <p >Coded 1000+ hours in an immersive full-stack development program in Seattle.
+                     Through the program, I gained proficiency in Java, MEAN and Python.</p>
+            </div>
+          </div>
+        </div>
+          <div class="circle-wrapper" id="dot-two"> <div class="circle"></div> </div>
+          <div class="work-wrapper">
+            <div class="work-container">
+              <div class="work left">
+                <h5>2015-2016</h5>
+                <h4>REFTEK TECHNOLOGIES</h4>
+                <h6>UI/UX Designer</h6>
+                <p >Oversaw and implemented the mobile app mock-up designs of 2 core projects as well as
+                    structuring the information architecture.</p>
+              </div>
+            </div>
+          </div>
+          <div class="circle-wrapper" id="dot-three"> <div class="circle"></div> </div>
+          <div class="work-wrapper">
+            <div class="work-container">
+              <div class="work right" id="last-work">
+                <h5>2014-2015</h5>
+                <h4>LEKKI BRITISH SCHOOL</h4>
+                <h6>Marketing &amp; Admissions Officer</h6>
+                <p >Headed the admissions &amp; marketing team which resulted in a 60% partnership
+                   increase &amp; over 40% increase in the number of student applications in one year.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="recomm ">
+          <h1>Recommendations</h1>
+          <div class="recomm-container">
+            <p>For 14 weeks, I had the opportunity to witness one of the most diligent, determined, and humble students I've
+              ever taught grow into a truly stellar web developer… Through those 14 weeks, Wura worked tirelessly -
+              often 70+ hours a week including weekends. The hard work definitely paid off as Wura earned a Black Belt in every one
+              of her 3 full stacks.. Only 5% of Coding Dojo graduates become triple Black Belt students. Wura is not only technically
+              talented. She showed great humility and empathy through out the program, often pausing her own work for extended periods
+              of time to help out her cohort mates. Whether she was struggling with an assignment or flying through them, Wura always
+              kept an exceptionally positive attitude, continuously repeating that she was grateful to be here. </p>
+              <div class="recommender">
+                <img src="./img/don.png" alt="">
+                <div class="recommender-text">
+                  <h5><a href="https://www.linkedin.com/in/donovan-an/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3B9E6Gz%2BCiRvyv5cbWKUuPPA%3D%3D&licu=urn%3Ali%3Acontrol%3Ad_flagship3_profile_view_base-recommendation_details_profile" target="_blank">Donavan An</a></h5>
+                  <h4>Lead Instructor at Coding Dojo</h4>
+                </div>
+              </div>
+          </div>
+          <div class="recomm-container">
+            <p>Working with Wura was pleasantly refreshing. Her attention to detail is remarkable and her willingness to do things
+               the right way was just what we needed in our team. Her knack for knowing exactly how and why things work was
+               invaluable to us and it pushed the team to not accept mediocre work. We collaborated in a couple of projects together
+               and her pace of growth was exceptional. it's clear she's a fast and consistent learner.
+               Best UI/UX person i've worked with till date. </p>
+              <div class="recommender">
+                <img src="./img/ray.png" alt="">
+                <div class="recommender-text">
+                  <h5><a href="https://www.linkedin.com/in/raymondativie/" target="_blank">Raymond Ativie</a></h5>
+                  <h4>Operations Officer at Reftek Technologies</h4>
+                </div>
+              </div>
+          </div>
+          <div class="recomm-container">
+            <p>I had the privilege of teaching Wura at Coding Dojo. I can not say enough good things about her!
+      Wura is highly creative and a very easy-going person to work with. Wura is also, by fair, the hardest working student
+      I have encountered during my time here. She put in a plethora of late nights to ensure that she understood the concepts
+      and ideas presented to her. After solidifying these concepts, she was always eager to teach others what she learned.
+I cannot recommend Wura enough. She will be a valuable asset to ANY team she joins. </p>
+              <div class="recommender">
+                <img src="./img/ray.png" alt="">
+                <div class="recommender-text">
+                  <h5><a href="https://www.linkedin.com/in/rayclark200/" target="_blank">Ray Bell</a></h5>
+                  <h4>Instructor at Coding Dojo</h4>
+                </div>
+              </div>
+          </div>
+          <div class="recomm-container">
+            <p>Wura is creative ingenious. She always finds a way to blend "new approach" to "getting the job done", an exponential output enhancer to her team(s).  </p>
+              <div class="recommender">
+                <img src="./img/jes.png" alt="">
+                <div class="recommender-text">
+                  <h5><a href="https://www.linkedin.com/in/jesse-egeonu-16667092/" target="_blank">Jesse Egeonu</a></h5>
+                  <h4>PA to the Vice-Chancellor at Covenant University</h4>
+                </div>
+              </div>
+          </div>
+          <span>Source - LinkedIn</span>
+        </section>
+
+
+
+        <section class="edu">
+            <h1>Education</h1>
+            <div class="edu-container">
+              <h3>Coding Dojo</h3>
+              <h4>Full Stack Developer</h4>
+              <h4>2017</h4>
+            </div>
+            <div class="edu-container">
+              <h3>Covenant University</h3>
+              <h4>Bsc. Economics</h4>
+              <h4>2010-2014</h4>
+            </div>
+            <div class="edu-container">
+              <h3>University of Wharton, Pennsylvania</h3>
+              <h4>Introduction to Marketing, Certification</h4>
+              <h4>2015</h4>
+            </div>
+        </section>
+
+        <div id="resume"> <a href="https://docs.google.com/document/d/1qj5TsDr4Pyqkwax8FtKbB1P9eWs_z3t7t7Nz3Ih6OfQ/edit?usp=sharing" target="_blank">resume</a> </div>
+
+        <footer>
+          <div class="social">
+            <a  class="col" href="https://www.linkedin.com/in/wura-alese-22650a83/" target="_blank">
+              <img src="./img/linkedin.png" alt="" class="desktop">
+              <img src="./img/mobile/linkedin.png" alt="" class="mobile">
+            </a>
+            <a  class="col" href="https://twitter.com/wuraalese" target="_blank">
+              <img src="./img/twitter.png" alt="" class="desktop">
+              <img src="./img/mobile/twitter.png" alt="" class="mobile">
+            </a>
+            <a  class="col" href="https://www.instagram.com/wuraalese/" target="_blank">
+              <img src="./img/instagram.png" alt="" class="desktop">
+              <img src="./img/instagram.png" alt="" class="mobile">
+            </a>
+            <a  class="col" href="https://github.com/Zainab-Kalief" target="_blank">
+              <img src="./img/github.png" alt="" class="desktop">
+              <img src="./img/github.png" alt="" class="mobile">
+            </a>
+          </div>
+          <form class="note desktop" action="/email" method="post">
+            <div class="row " id="note-input">
+              <input type="text" name="name" value="" class="col-5" placeholder="F U L L &nbsp;  N A M E">
+              <div class="col-2"></div>
+              <input type="email" name="email" value="" class="col-5" placeholder="E M A I L">
+            </div>
+            <textarea type="text" name="message" id="message" placeholder="M E S S A G E"></textarea>
+            <input type="hidden" name="page" value="about">
+            <h4 class="error"></h4>
+            <input type="submit" value="send" class="send-button">
+          </form>
+          <form class="note mobile" action="/email" method="post">
+            <input type="text" name="name" value="" class="mobile-form-field" placeholder="F U L L &nbsp;  N A M E">
+            <input type="email" name="email" value="" class="mobile-form-field" placeholder="E M A I L">
+            <textarea type="text" name="message" id="message"  class="mobile-form-field" placeholder="M E S S A G E"></textarea>
+            <input type="hidden" name="page" value="about">
+            <h4 class="error"></h4>
+            <input type="submit" value="send" class="send-button">
+          </form>
+        </footer>
+       </div>
+
+
+       <!-- nav menu extended -->
+       <nav id="nav-extended" class="mobile">
+         <img src="./img/mobile/logo.png" alt="logo" class="logo mobile" >
+         <img src="./img/mobile/cancel.png" alt="logo" class="mobile cancel" >
+         <div class="nav-wrapper">
+           <div class="nav-container">
+             <h3><a class="nav-link " href="/">HOME</a></h3>
+             <h3><a class="nav-link " href="/about">ABOUT</a></h3>
+             <h3><a class="nav-link" href="/portfolio">PORTFOLIO</a></h3>
+             <h3><a class="nav-link" href="/experience">EXPERIENCE</a></h3>
+             <h3><a class="nav-link" href="/game">GAME</a></h3>
+             <div class="contact-button"> <a href="#">contact</a> </div>
+           </div>
+         </div>
+       </nav>
+
+  </body>
+</html>
