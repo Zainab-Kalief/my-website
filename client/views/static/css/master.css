@@ -60,7 +60,7 @@
      width: 65px;
      height: 65px;
      border-radius: 50px;
-     background-color: #dbb8b8;
+     background-color: #e6e6e6;
      display: inline-block;
      border-radius: 50%;
      line-height: 60px;
@@ -70,7 +70,7 @@
    #note-input .col-5 {
      height: 3em;
      border: none;
-     background-color: #dbb8b8;
+     background-color: #e6e6e6;
      padding-left: 1rem;
      }
    input::-webkit-input-placeholder, #message::-webkit-input-placeholder  {
@@ -83,7 +83,7 @@ form h4 {  margin: 15px;  font-size: 1em; font-weight: 100; }
  margin-top: 3em;
  height: 10em;
  padding: 1rem;
- background-color: #dbb8b8;
+ background-color: #e6e6e6;
 }
 .send-button {
   text-align: center;

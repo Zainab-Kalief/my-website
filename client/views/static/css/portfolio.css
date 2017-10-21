@@ -48,20 +48,20 @@
       margin: auto;
       border: 2px solid white;
     border-radius: 50px;
-    padding: 15px;
-    width: 170px;
+    padding: 20px 55px;
+    text-decoration: none;
+    color: white;
+    letter-spacing: .1em;
+      font-weight: 100;
     }
     .view-button a {
-      text-decoration: none;
-      color: white;
-      letter-spacing: .1em;
-        font-weight: 100;
+
     }
     .view-button a:hover {  text-decoration: none;  color: #429CDF; }
     .view-button:hover { border: 2px solid #429CDF; }
     .work-hover-overlay p, .work-hover-overlay h4, .view-button {
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin-top: 40px;
+      margin-bottom: 40px;
     }
     .tags {
       width: 70%;

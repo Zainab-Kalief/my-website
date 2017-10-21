@@ -8,13 +8,13 @@ header {  background-color: #429CDF;}
 
 .tag {
   border-radius: 50px;
-      color: white;
       font-size: .7em;
       padding: 15px 25px;
       letter-spacing: .1em;
-      font-weight: 100;
       display: inline-block;
-      background-color: #eccece;
+      background-color: #e6e6e6;
+      color: black;
+      font-weight: 400;
       margin: .4em;
 }
 .experience {
@@ -64,9 +64,13 @@ width: 80%!important;
 .left {    float: right;   }
 .right {  float: right;  }
 #last-work { padding-bottom: 0}
-.work h4, .work h5, .work h6 { font-weight: 100;  letter-spacing: .05em;     }
+.work h4, .work h6 { font-weight: 100;  letter-spacing: .05em;     }
 .work p {  color: #CCCCCC; font-weight: 200; }
-.work h5 { color: #429CDF; font-weight: 100; }
+.work h5 {
+  font-weight: 400;
+  letter-spacing: .05em;
+  color: #429CDF;
+ }
 .work h4 { color: white;  font-weight: 100; font-size: 1.2em;}
 .work h6 {  color: white; margin-top: 30px;  margin-bottom: 30px; font-weight: 400; }
 

@@ -2,6 +2,11 @@
 
 header {  background-color: #F7C84A;}
 .work-text { padding: 40px; }
+.work-title {
+  text-align: center;
+margin: 40px;
+font-weight: 300;
+}
 .text-container {  margin-bottom: 40px;  }
 .text-container p  { margin-bottom: 0; font-weight: 100; }
 .col-5 {
@@ -12,11 +17,11 @@ header {  background-color: #F7C84A;}
   display: inline-block;
 margin: .4em;
 border-radius: 50px;
-background-color: #eccece;
+background-color: #e6e6e6;
 padding: 20px 30px;
-color: white;
+color: black;
 letter-spacing: .1em;
-  font-weight: 100;
+  font-weight: 400;
       font-size: .8em;
 }
 iframe {     width: 80%; }
