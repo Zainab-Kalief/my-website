@@ -65,7 +65,7 @@
           for (let value of $(this).serializeArray()) {
             data[value.name] = value.value
           }
-          $.post('http://localhost:8000/email', data,
+          $.post('http://54.213.41.161/email', data,
              (response, status) => {
               var content;
               if (response.status) {
