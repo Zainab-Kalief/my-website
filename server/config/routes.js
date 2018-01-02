@@ -1,5 +1,5 @@
 const nodemailer = require('nodemailer')
-
+const songs = require('../db/songs.js')
 module.exports = function (app) {
 
   app.get('/', (request, response) => {
@@ -33,7 +33,6 @@ module.exports = function (app) {
     response.render('game')
   })
 
-
   app.post('/email', (request, response) => {
     if (!request.body.name || !request.body.email || !request.body.message) {
         response.json({message: 'All fields are required', status: false})
@@ -42,7 +41,7 @@ module.exports = function (app) {
         service: 'gmail',
         auth: {
           user: 'wuraalese@gmail.com',
-          pass: 'Weknowaguy1'
+          pass: 'Modernfamily1'
         }
       })
       var mail = {
@@ -54,18 +53,17 @@ module.exports = function (app) {
       transporter.sendMail(mail, function (error, info) {
         if(error) {
           console.log(error);
+          response.json({message: 'Your message was unable to deliver because of an error!', status: false})
         } else {
           console.log('Email sent: ' + info.response);
+          response.json({message: 'Your message has been delivered!', status: true})
         }
       })
-      response.json({message: 'Your message has been delivered!', status: true})
+
     }
 
 
   })
-
-
-
 
 
 }

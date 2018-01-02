@@ -58,27 +58,7 @@
         $('.main').css('display', 'block')
       })
 
-      $('form').submit(function (element) {
-        var myForm = $('form')
-        var data = {}
-        element.preventDefault();
-        for (let value of $(this).serializeArray()) {
-          data[value.name] = value.value
-        }
-        $.post('http://54.213.41.161/email', data,
-           (response, status) => {
-            var content;
-            if (response.status) {
-              $('.error').text(response.message)
-              $('.error').css('color', 'white')
-            } else {
-              $('.error').text(response.message)
-              $('.error').css('color', '#a52929')
-            }
-            $('form').append(content)
-            $('form').trigger('reset')
-          })
-      })
+
 
       })
   </script>
