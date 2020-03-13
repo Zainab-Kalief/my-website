@@ -1,0 +1,28 @@
+@media (max-width: 900px) {
+
+header {  background-color: #F7C84A;}
+.text {     margin: 30px; }
+.work-title {
+  text-align: center;
+margin: 40px;
+font-weight: 300;
+}
+.text-container { margin-bottom: 40px; }
+.text-container p {  font-weight: 100;    }
+.tech-tag {
+  display: inline-block;
+margin: .4em;
+border-radius: 50px;
+padding: 20px 30px;
+letter-spacing: .1em;
+      font-size: .8em;
+      background-color: #e6e6e6;
+      color: black;
+      font-weight: 400;
+}
+.shots { margin: 20px; text-align: center;}
+.shots img {  width: 70%; }
+iframe { width: 70%;  height: 100%; }
+
+
+}

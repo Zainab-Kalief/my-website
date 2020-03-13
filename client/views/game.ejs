@@ -1,0 +1,140 @@
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./css/game.css">
+  <link rel="stylesheet" href="./css/master.css">
+  <link rel="stylesheet" href="./css/mobile-master.css">
+  <link rel="stylesheet" href="./css/mobile-game.css">
+  <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,400,500,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <title>Wura</title>
+  <script type="text/javascript">
+      $(document).ready(function () {
+      const selectNames = ['select-home', 'select-about', 'select-portfolio', 'select-experience', 'select-game']
+      for (id of selectNames) {
+        if (id != 'select-game') {
+          $('#' + id).hide()
+        }
+      }
+
+      $("#select-home-li").click(function () {
+        for (id of selectNames) {
+          if (id != 'select-home') {  $('#' + id).hide()  } else {  $("#select-home").toggle("fast")  }
+        }
+      })
+      $("#select-about-li").click(function () {
+        for (id of selectNames) {
+          if (id != 'select-about') {  $('#' + id).hide()  } else {  $("#select-about").toggle("fast")  }
+        }
+      })
+      $("#select-portfolio-li").click(function () {
+        for (id of selectNames) {
+            if (id != 'select-portfolio') { $('#' + id).hide()  } else {  $("#select-portfolio").toggle("fast")  }
+        }
+      })
+      $("#select-experience-li").click(function () {
+        for (id of selectNames) {
+          if (id != 'select-experience') {  $('#' + id).hide()  } else {  $("#select-experience").toggle("fast")
+          }
+        }
+      })
+      $("#select-game-li").click(function () {
+        for (id of selectNames) {
+          if (id != 'select-game') {  $('#' + id).hide()  } else {  $("#select-game").toggle("fast")  }
+        }
+        })
+
+      $('.nav-menu').click(function () {
+        $('.main').css('display', 'none')
+        $('#nav-extended').css('display', 'block')
+      })
+
+      $('.cancel').click(function () {
+        $('#nav-extended').css('display', 'none')
+        $('.main').css('display', 'block')
+      })
+
+
+
+      })
+  </script>
+	<style>
+		#magic{
+			color: #777;
+			border-right: 1px solid #777;
+			padding-right: 7px;
+			display: inline;
+			white-space: pre-wrap; /*This means make every space a xter*/
+		}
+	</style>
+</head>
+<body>
+  <div class="main">
+    <header>
+      <a href="/" class="logo desktop"><img src="./img/logo.png" alt="logo"  ></a>
+      <a href="/" class="logo mobile" ><img src="./img/mobile/logo.png" alt="logo" ></a>
+      <img src="./img/mobile/nav.png" alt="logo" class="nav-menu mobile">
+      <ul class="nav justify-content-center desktop">
+        <li class="nav-item" id="select-home-li">  <a class="nav-link " href="/">HOME</a> <div class="select" id="select-home"></div> </li>
+        <li class="nav-item" id="select-about-li">  <a class="nav-link " href="/about">ABOUT</a> <div class="select" id="select-about"></div>  </li>
+        <li class="nav-item" id="select-portfolio-li">  <a class="nav-link" href="/portfolio">PORTFOLIO</a> <div class="select" id="select-portfolio"></div> </li>
+        <li class="nav-item" id="select-experience-li">  <a class="nav-link" href="/experience">EXPERIENCE</a> <div class="select" id="select-experience"></div></li>
+        <li class="nav-item" id="select-game-li">  <a class="nav-link" href="/game">GAME</a> <div class="select" id="select-game"></div> </li>
+      </ul>
+      <div class="game-text-wrapper">
+        <section class="game-text">
+          A game <div id="magic"></div>
+        </section>
+      </div>
+    </header>
+
+  </div>
+
+
+  <nav id="nav-extended" class="mobile">
+    <img src="./img/mobile/logo.png" alt="logo" class="logo mobile" >
+    <img src="./img/mobile/cancel.png" alt="logo" class="mobile cancel" >
+    <div class="nav-wrapper">
+      <div class="nav-container">
+        <h3><a class="nav-link " href="/">HOME</a></h3>
+        <h3><a class="nav-link " href="/about">ABOUT</a></h3>
+        <h3><a class="nav-link" href="/portfolio">PORTFOLIO</a></h3>
+        <h3><a class="nav-link" href="/experience">EXPERIENCE</a></h3>
+        <h3><a class="nav-link" href="/game">GAME</a></h3>
+        <div class="contact-button"> <a href="#">contact</a> </div>
+      </div>
+    </div>
+  </nav>
+
+
+	<script>
+		var words = ["about me", "made by me",  "made with love", "is coming soon"],
+			el = document.getElementById('magic'),
+			word_counter = 0,
+			character_counter = 0;
+
+		function updateText()
+		{
+			//this sets everything in the HTML to previous exciting things [Coding is] plus each word letter
+			el.innerHTML = el.innerHTML+words[word_counter][character_counter++];
+
+			if(character_counter > words[word_counter].length)
+			{
+				word_counter++; 	//choose a different word
+				character_counter = 0;	//start over with the first character of the word
+				el.innerHTML = '';  //set the html to be blank
+
+				//if we're displaying the last word, go back to the first word
+				if(word_counter == words.length)
+					word_counter = 0;
+			}
+		}
+		setInterval(updateText,400);
+	</script>
+</body>
+
+</html>

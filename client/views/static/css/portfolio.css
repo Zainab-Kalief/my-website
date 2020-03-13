@@ -1,0 +1,87 @@
+@media (min-width: 901px)  {
+
+
+    header {  background-color: #F7C84A;}
+    #works {
+      width: 80%;
+      margin: 20px auto;
+     }
+    .works-left { margin-top: 150px; }
+    .work-container { padding: 20px; }
+    .work { position:  relative;}
+    .work img {
+      width: 100%!important;
+    }
+    .work-hover-overlay {
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      transition: all .5s ease 0s;
+      width: 100%;
+    }
+    .work-hover {
+    background-color: rgba(0, 0, 0, .75);
+    display: table;
+    height: 100%;
+    width: 100%;
+    }
+    .work-hover-content {
+    color: #fff;
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+        transition: all .3s ease-out 0s;
+    }
+    .work-hover-overlay:hover { opacity: 1  }
+
+    .work-hover-overlay p {
+      font-family: 'Playfair Display', serif;
+          font-style: italic;
+    }
+    .work-hover-overlay h4 {
+      letter-spacing: .06em;
+      font-weight: 100;
+    }
+    .view-button {
+      margin: auto;
+      border: 2px solid white;
+    border-radius: 50px;
+    padding: 20px 55px;
+    text-decoration: none;
+    color: white;
+    letter-spacing: .1em;
+      font-weight: 100;
+    }
+    .view-button a {
+
+    }
+    .view-button a:hover {  text-decoration: none;  color: #429CDF; }
+    .view-button:hover { border: 2px solid #429CDF; }
+    .work-hover-overlay p, .work-hover-overlay h4, .view-button {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    .tags {
+      width: 70%;
+      margin: auto;
+      margin-top: 100px
+    }
+    .tag {
+      border-radius: 5px;
+      color: #878787;
+      width: 70px;
+      font-size: .7em;
+    display: inline-block;
+    background-color: #C9C4C4;
+    height: 30px;
+    line-height: 30px;
+    margin: 5px;
+    }
+
+
+
+
+
+}

@@ -1,0 +1,116 @@
+@media (min-width: 901px)  {
+  * {     font-family: 'Montserrat', sans-serif; }
+  .mobile { display: none !important; }
+  .logo {  position: relative;  left: 2em; top: 1em; float: left;}
+  /*nav bar */
+  #nav { margin-right: 0px}
+  .nav-item {
+    margin-top: 20px;
+  }
+  .nav li a {
+    color: white;
+    font-weight: 200;
+    letter-spacing: .15em;
+   }
+   .nav li a:hover {
+     color: #DFDFDF;
+   }
+   .select {
+     width: 25px;
+     height: 2px;
+     background-color: white;
+     margin-left: 1em;
+   }
+   /*header */
+   header {
+     margin: 0px;
+         padding-bottom: 3rem;
+     background-size: cover;
+     color: white;
+   }
+   .header-content {
+     margin: 6em auto auto auto;
+     width: 37em;
+   }
+   .header-content p {
+     font-weight: 100;
+   letter-spacing: .1em;
+   }
+   .header-content h1 {
+     font-size: 5em;
+   }
+   .header-content span {
+     font-size: .4em;
+       font-weight: 100;
+   }
+
+.arrows {    margin: 40px; }
+
+#previous { font-weight: 300;}
+#next { float: right; font-weight: 300; }
+   /*footer */
+   footer {  padding-bottom: 3em; background-color: black; }
+   .social {
+     margin: auto;
+         padding-top: 3em;
+     text-align: center;
+   }
+   .social .col{
+     margin: 0 3em;
+     width: 65px;
+     height: 65px;
+     border-radius: 50px;
+     background-color: #e6e6e6;
+     display: inline-block;
+     border-radius: 50%;
+     line-height: 60px;
+   }
+   .note {  margin: 4em auto;  width: 55%; text-align: center; }
+   #note-input {  margin: 0; }
+   #note-input .col-5 {
+     height: 3em;
+     border: none;
+     background-color: #e6e6e6;
+     padding-left: 1rem;
+     }
+   input::-webkit-input-placeholder, #message::-webkit-input-placeholder  {
+     color: #878787;  font-size: 1em; font-weight: 100; }
+
+form h4 {  margin: 15px;  font-size: 1em; font-weight: 100; }
+#message {
+ width: 100%;
+ border: none;
+ margin-top: 3em;
+ height: 10em;
+ padding: 1rem;
+ background-color: #e6e6e6;
+}
+.send-button {
+  text-align: center;
+  border: 2px solid white;
+  border-radius: 50px;
+  padding: 15px;
+  width: 170px;
+  background-color: unset;
+  text-decoration: none;
+  color: white;
+  letter-spacing: .1em;
+  font-weight: 100;
+  margin: 2rem;
+  display: block;
+margin: 20px auto;
+}
+.send-button:hover {
+  background: white;
+  color: black;
+}
+
+.intro {
+  margin: 60px;
+  padding: 0 350px;
+  text-align: center;
+}
+.intro p { font-weight: 300; }
+
+
+}
