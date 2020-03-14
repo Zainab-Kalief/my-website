@@ -6,7 +6,7 @@ My personal website built with love and code.
 - Clone this repo
 - cd to the root of the project
 - From the root, run `npm install` to install all packages
-- From the root, run `nodemon server.js` to start the app -> `http://localhost:8000`
+- From the root, run `node server.js` to start the app -> `http://localhost:8000`
 
 ## Things to note
 - This project was built in 2017 and a couple of things may be obsolete/deprecated. No current plans are being made to maintain this project because I currently have no need for it.
